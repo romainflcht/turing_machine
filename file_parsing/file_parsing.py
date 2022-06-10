@@ -16,6 +16,7 @@ def read_and_parse(file_path: str) -> tuple:
         for line in raw_program:
             if line != '\n':
                 parsed_line = line.rstrip().split(' ')
+                # print(parsed_line)
 
                 if len(parsed_line) == 5:
                     parsed_program.append(parsed_line)
