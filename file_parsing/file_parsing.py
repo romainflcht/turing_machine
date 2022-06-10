@@ -1,31 +1,51 @@
 import os
 
 
-def read_and_parse(file_path: str) -> tuple:
+def read_and_parse(file_path: str) -> list:
     """
-    Read file and parse every line by removing \n and empty line.
+    Read file and parse every line by removing \n, empty line and comment.
     :param file_path: path to the main.tur file.
     :return: list that contain every parsed line of code.
     """
     parsed_program = []
-    if os.path.isfile(file_path):
 
+    # Check if the file exist.
+    if os.path.isfile(file_path):
         with open(file_path, 'r') as program_file:
             raw_program = program_file.readlines()
 
-        for line in raw_program:
-            if line != '\n':
-                parsed_line = line.rstrip().split(' ')
-                # print(parsed_line)
+        for index_line in range(len(raw_program)):
+            # Removing evry comment in the file.
+            if ';' in raw_program[index_line]:
+                semicolon_index = raw_program[index_line].index(';')
+                line = raw_program[index_line][:semicolon_index]
 
-                if len(parsed_line) == 5:
+            else:
+                line = raw_program[index_line][:]
+
+            # Check if the line is not empty.
+            if line not in ('\n', ''):
+                # Remove any \n and split line between every space.
+                parsed_line = line.replace('\n', '').split(' ')
+                len_parsed_line = len(parsed_line)
+
+                # Check if the line is in the right format.
+                if len_parsed_line == 5:
                     parsed_program.append(parsed_line)
 
-        first_line = parsed_program[0]
+                elif len_parsed_line > 5:
+                    if parsed_line[5] == '':
+                        parsed_program.append(parsed_line[:5])
 
+                    else:
+                        # Raise format error
+                        raise SyntaxError(f'in {file_path} at line {index_line + 1}.')
+                else:
+                    # Raise format error
+                    raise SyntaxError(f'in {file_path} at line {index_line + 1}.')
     else:
-        return ()
-    return parsed_program, first_line
+        raise FileNotFoundError(f'{file_path} don\'t exist')
+    return parsed_program
 
 
 def separate_states(parsed_program: list) -> dict:
@@ -50,4 +70,4 @@ def separate_states(parsed_program: list) -> dict:
 
 
 if __name__ == '__main__':
-    print(f'{__file__} not executable')
+    pass
