@@ -1,10 +1,11 @@
+# Copyright : romainflcht
+
 from file_parsing.file_parsing import *
 from instruction_processing.instruction_processing import *
 
 FILE_PATH = 'main.tur'
-# tape = ['0', '1', '_', '_', '_', '1', '_']
-# tape = ['1', '0', '0', '1', '0', '0', '1', ]
-tape = [elt for elt in '100010001']
+
+tape = [elt for elt in '110110_101011']
 cursor = 0
 current_state = '0'
 is_running = True

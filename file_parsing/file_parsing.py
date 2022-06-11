@@ -1,3 +1,5 @@
+# Copyright : romainflcht
+
 import os
 
 
@@ -57,17 +59,18 @@ def separate_states(parsed_program: list) -> dict:
     dict_programs = {}
 
     for line in parsed_program:
+        # Get state and symbol that the line read on tape.
         state = line[0]
         symbol = line[1]
 
+        # Create a dictionnary for every symbol that every state has to read.
         if not dict_programs.get(state):
             dict_programs[state] = {symbol: line[2:]}
 
         else:
             dict_programs[state][symbol] = line[2:]
-
     return dict_programs
 
 
 if __name__ == '__main__':
-    pass
+    print('This script is not supposed to be executed alone, import it to use it.')
