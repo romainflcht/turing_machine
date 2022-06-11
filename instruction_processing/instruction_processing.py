@@ -1,3 +1,5 @@
+# Copyright : romainflcht
+
 import time
 
 
