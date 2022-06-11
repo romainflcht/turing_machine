@@ -47,3 +47,7 @@ def execute_line(tape: list, cursor: int, states: dict, current_state: str, debu
         time.sleep(.25)
 
     return cursor, next_state
+
+
+if __name__ == '__main__':
+    print('This script is not supposed to be executed alone, import it to use it.')
