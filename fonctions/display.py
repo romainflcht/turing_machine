@@ -22,17 +22,18 @@ HELP = """
 ║                              HELP                              ║
 ╠════════════════════════════════════════════════════════════════╣
 ║ Every line has to be in the right format :                     ║
-║ [state] [current symbol] [new symbol] [direction] [new_state]  ║
+║ [state] [current symbol] [new symbol] [direction] [new state]  ║
 ║                                                                ║
-║ • [state] and [new_state] :                                    ║
+║ • [state] and [new state] :                                    ║
 ║    - Can be anything (number and letter) but ';', '*' and ' '. ║
+║    - To stop the program, use the halt state.                  ║
 ║                                                                ║
 ║ • [current symbol] and [new symbol] :                          ║
 ║    - use _ to read and write space.                            ║
 ║    - use * to read anything or write nothing.                  ║
 ║    - you can't use ;                                           ║
 ║                                                                ║
-║ • [direction]:                                                 ║
+║ • [direction] :                                                ║
 ║    - use r to go right on the tape.                            ║
 ║    - use l to go left on the tape.                             ║
 ║    - use * to not move.                                        ║

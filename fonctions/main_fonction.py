@@ -1,3 +1,5 @@
+# Copyright : romainflcht
+
 from fonctions.file_parsing import *
 from fonctions.instruction_processing import *
 from fonctions.tape_init import *

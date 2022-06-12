@@ -1,6 +1,5 @@
 # Copyright : romainflcht
 
-import os
 import time
 from fonctions.display import *
 
@@ -17,7 +16,7 @@ def state_execution(tape: list, cursor: int, states: dict, current_state: str, d
     """
     if debug:
         # Debug print.
-        print('┌─ Started execute line : ──────────────────────────────────────────────')
+        print('┌─ Started execute state : ──────────────────────────────────────────────')
         print(f'│ • [current_state] = {current_state}')
         print('│ • [tape] = [', end='')
         display_tape(tape)
@@ -69,7 +68,7 @@ def state_execution(tape: list, cursor: int, states: dict, current_state: str, d
     if debug:
         # debug print.
         print(f'│ • [execute] Writing {to_write} at location {cursor} and go to {direction}')
-        print('└─ Ended execute line ──────────────────────────────────────────────────', end='\n\n\n')
+        print('└─ Ended execute state ──────────────────────────────────────────────────', end='\n\n\n')
         time.sleep(.25)
 
     return cursor, next_state
