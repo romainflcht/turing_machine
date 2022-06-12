@@ -3,8 +3,8 @@
 def tape_init(user_input: str) -> list:
     """
     Fonction that create a tape with what user write into the console.
-    :param user_input: String that contain user input.
-    :return: List that is the initialised tape.
+    :param user_input: string that contain user input (str).
+    :return: list that is the initialised tape.
     """
 
     # Semicolon not supported as value to read on tape.

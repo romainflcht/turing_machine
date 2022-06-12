@@ -6,7 +6,7 @@ import os
 def read_and_parse(file_path: str) -> list:
     """
     Read file and parse every line by removing \n, empty line and comment.
-    :param file_path: path to the main.tur file.
+    :param file_path: path to the main.tur file (str).
     :return: list that contain every parsed line of code.
     """
     parsed_program = []
@@ -53,8 +53,8 @@ def read_and_parse(file_path: str) -> list:
 def separate_states(parsed_program: list) -> dict:
     """
     Separate each part of states written in the main.tur file.
-    :param parsed_program: parsed data from the fonction 'read_and_parse'.
-    :return: Dict that contains every state with their lines.
+    :param parsed_program: parsed data from the fonction 'read_and_parse' (list).
+    :return: dict that contains every state with their lines.
     """
     dict_programs = {}
 
